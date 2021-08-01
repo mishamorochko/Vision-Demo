@@ -1,1 +1,3 @@
-protocol MainRouterInput: AnyObject {}
+protocol MainRouterInput: Router {
+    func goToTextRecognition()
+}

@@ -27,9 +27,19 @@ final class MainViewModel {
 
     // MARK: - API
 
-    func becomeActive() {
-        menuItems.append(MenuItem(title: "Text Recognition", image: UIImage(systemName: "rectangle.and.text.magnifyingglass") ?? UIImage()))
-        menuItems.append(MenuItem(title: "Face Detection", image: UIImage(systemName: "faceid") ?? UIImage()))
-        menuItems.append(MenuItem(title: "Object tracking", image: UIImage(systemName: "person.fill.viewfinder") ?? UIImage()))
+    func becomeActive() {}
+
+    func initMenuModels() {
+        menuItems.append(MenuItem(title: "Text Recognition", image: UIImage(systemName: "rectangle.and.text.magnifyingglass") ?? UIImage(), type: .textRecognition))
+        menuItems.append(MenuItem(title: "Face Detection", image: UIImage(systemName: "faceid") ?? UIImage(), type: .faceDetection))
+        menuItems.append(MenuItem(title: "Object tracking", image: UIImage(systemName: "person.fill.viewfinder") ?? UIImage(), type: .objectTracking))
+    }
+
+    func didSelectItem(at indexPath: IndexPath) {
+        guard let router = router else { return }
+        switch menuItems[indexPath.row].type {
+        case .textRecognition: router.goToTextRecognition()
+        case .faceDetection, .objectTracking: break
+        }
     }
 }

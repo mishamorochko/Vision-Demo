@@ -1,6 +1,6 @@
 import UIKit
 
-final class MainRouter: UIViewController {
+final class TextRecognitionRouter: UIViewController, TextRecognitionRouterInput {
 
     // MARK: - Properties
     // MARK: Private
@@ -26,17 +26,8 @@ final class MainRouter: UIViewController {
     // MARK: - UIViewController
 
     override func loadView() {
-        let model = MainViewModel()
+        let model = TextRecognitionViewModel()
         model.router = self
-        view = MainView(viewModel: model)
-        navigationController?.navigationBar.barStyle = .default
-        title = "Vision Demo"
-    }
-}
-
-extension MainRouter: MainRouterInput {
-    func goToTextRecognition() {
-        let textRecognitionRouter = TextRecognitionRouter()
-        push(textRecognitionRouter)
+        view = TextRecognitionView(viewModel: model)
     }
 }

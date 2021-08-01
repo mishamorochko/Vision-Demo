@@ -13,7 +13,7 @@ final class MainView: UIView {
     init(viewModel: MainViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
-        viewModel.becomeActive()
+        viewModel.initMenuModels()
         setup()
     }
     
@@ -64,5 +64,9 @@ extension MainView: UITableViewDataSource, UITableViewDelegate {
         let cell: MenuItemCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.configure(using: viewModel.mainMenuItems[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectItem(at: indexPath)
     }
 }
