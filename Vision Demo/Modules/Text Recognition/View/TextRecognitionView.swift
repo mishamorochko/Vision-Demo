@@ -28,6 +28,7 @@ final class TextRecognitionView: UIView {
         setupUI()
         addSubviews()
         setupConstraints()
+        visionTest()
     }
 
     private func setupUI() {
@@ -40,6 +41,16 @@ final class TextRecognitionView: UIView {
     }
 
     private func setupConstraints() {
-        textLabel.pin.center(in: self)
+        textLabel.pin.centerY(in: self).edges([.left, .right], to: self, insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
+        textLabel.numberOfLines = 0
+    }
+
+    // MARK: = Helpers
+    private func visionTest() {
+        guard let image = UIImage(named: "handwritten") else { return }
+        CoreVisionManager.instance.recognizeTextFrom(image: image) { [weak self] recognizedText in
+            guard let view = self else { return }
+            view.textLabel.text = recognizedText
+        }
     }
 }

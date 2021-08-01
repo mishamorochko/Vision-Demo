@@ -21,6 +21,9 @@ final class TextRecognitionRouter: UIViewController, TextRecognitionRouterInput 
 
     deinit {
         completion?()
+        #if DEBUG
+        print("TextRecognitionRouter deinit")
+        #endif
     }
 
     // MARK: - UIViewController

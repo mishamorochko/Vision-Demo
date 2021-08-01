@@ -24,6 +24,7 @@
 		7497CD7526B6A96600D54D7F /* TextRecognitionRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD7426B6A96600D54D7F /* TextRecognitionRouterInput.swift */; };
 		7497CD7D26B6ACCE00D54D7F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD7C26B6ACCE00D54D7F /* Router.swift */; };
 		7497CD7F26B6AFEC00D54D7F /* MenuItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD7E26B6AFEC00D54D7F /* MenuItemType.swift */; };
+		74A3E52426B70FED00B39EDB /* CoreVisionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A3E52326B70FED00B39EDB /* CoreVisionManager.swift */; };
 		74F1798826B5B0A80004FCA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1798726B5B0A80004FCA0 /* AppDelegate.swift */; };
 		74F1798A26B5B0A80004FCA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1798926B5B0A80004FCA0 /* SceneDelegate.swift */; };
 		74F1799126B5B0A90004FCA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F1799026B5B0A90004FCA0 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		7497CD7426B6A96600D54D7F /* TextRecognitionRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognitionRouterInput.swift; sourceTree = "<group>"; };
 		7497CD7C26B6ACCE00D54D7F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7497CD7E26B6AFEC00D54D7F /* MenuItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemType.swift; sourceTree = "<group>"; };
+		74A3E52326B70FED00B39EDB /* CoreVisionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreVisionManager.swift; sourceTree = "<group>"; };
 		74F1798426B5B0A80004FCA0 /* Vision Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vision Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F1798726B5B0A80004FCA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74F1798926B5B0A80004FCA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		7497CD6D26B6A91100D54D7F /* Text Recognition */ = {
 			isa = PBXGroup;
 			children = (
+				74A3E52326B70FED00B39EDB /* CoreVisionManager.swift */,
 				7497CD7A26B6A9C900D54D7F /* Cells */,
 				7497CD7626B6A9A200D54D7F /* Model */,
 				7497CD7926B6A9B600D54D7F /* Router */,
@@ -327,6 +330,7 @@
 				7497CD0F26B5B49D00D54D7F /* MainView.swift in Sources */,
 				74F1798A26B5B0A80004FCA0 /* SceneDelegate.swift in Sources */,
 				7497CD6926B6A61E00D54D7F /* MainRouterInput.swift in Sources */,
+				74A3E52426B70FED00B39EDB /* CoreVisionManager.swift in Sources */,
 				7497CD0E26B5B49D00D54D7F /* MainRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
