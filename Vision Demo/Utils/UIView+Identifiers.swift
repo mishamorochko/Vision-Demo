@@ -29,4 +29,3 @@ extension NibLoadableView where Self: UIView {
         fatalError("Couldn't get nib")
     }
 }
-

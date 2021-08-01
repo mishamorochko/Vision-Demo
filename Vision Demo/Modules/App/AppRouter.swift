@@ -17,7 +17,7 @@ final class AppRouter {
     // MARK: - API
 
     func start() {
-        let router = MainRouterImplementation()
+        let router = MainRouter()
         let navigationController = UINavigationController(rootViewController: router)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()

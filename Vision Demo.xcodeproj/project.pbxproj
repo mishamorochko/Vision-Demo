@@ -14,6 +14,10 @@
 		7497CD5926B5D37E00D54D7F /* UIView+Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD5626B5D37E00D54D7F /* UIView+Identifiers.swift */; };
 		7497CD5A26B5D37E00D54D7F /* EasyAutolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD5726B5D37E00D54D7F /* EasyAutolayout.swift */; };
 		7497CD5B26B5D37E00D54D7F /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD5826B5D37E00D54D7F /* UITableView+Register.swift */; };
+		7497CD6526B6A2A700D54D7F /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD6426B6A2A700D54D7F /* MenuItemCell.swift */; };
+		7497CD6726B6A55800D54D7F /* UIView+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD6626B6A55800D54D7F /* UIView+subviews.swift */; };
+		7497CD6926B6A61E00D54D7F /* MainRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD6826B6A61E00D54D7F /* MainRouterInput.swift */; };
+		7497CD6C26B6A7C100D54D7F /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD6B26B6A7C100D54D7F /* MenuItem.swift */; };
 		74F1798826B5B0A80004FCA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1798726B5B0A80004FCA0 /* AppDelegate.swift */; };
 		74F1798A26B5B0A80004FCA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1798926B5B0A80004FCA0 /* SceneDelegate.swift */; };
 		74F1799126B5B0A90004FCA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F1799026B5B0A90004FCA0 /* Assets.xcassets */; };
@@ -28,6 +32,10 @@
 		7497CD5626B5D37E00D54D7F /* UIView+Identifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Identifiers.swift"; sourceTree = "<group>"; };
 		7497CD5726B5D37E00D54D7F /* EasyAutolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyAutolayout.swift; sourceTree = "<group>"; };
 		7497CD5826B5D37E00D54D7F /* UITableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
+		7497CD6426B6A2A700D54D7F /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		7497CD6626B6A55800D54D7F /* UIView+subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+subviews.swift"; sourceTree = "<group>"; };
+		7497CD6826B6A61E00D54D7F /* MainRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterInput.swift; sourceTree = "<group>"; };
+		7497CD6B26B6A7C100D54D7F /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		74F1798426B5B0A80004FCA0 /* Vision Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vision Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F1798726B5B0A80004FCA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74F1798926B5B0A80004FCA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +70,7 @@
 				7497CD5726B5D37E00D54D7F /* EasyAutolayout.swift */,
 				7497CD5826B5D37E00D54D7F /* UITableView+Register.swift */,
 				7497CD5626B5D37E00D54D7F /* UIView+Identifiers.swift */,
+				7497CD6626B6A55800D54D7F /* UIView+subviews.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -79,6 +88,8 @@
 		7497CD5226B5CD5C00D54D7F /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7497CD6A26B6A7B400D54D7F /* Models */,
+				7497CD6326B6A2A700D54D7F /* Cells */,
 				7497CD5326B5CD7300D54D7F /* Router */,
 				7497CD5426B5CD7A00D54D7F /* View */,
 				7497CD5526B5CD7E00D54D7F /* ViewModel */,
@@ -89,6 +100,7 @@
 		7497CD5326B5CD7300D54D7F /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				7497CD6826B6A61E00D54D7F /* MainRouterInput.swift */,
 				7497CD0B26B5B49D00D54D7F /* MainRouter.swift */,
 			);
 			path = Router;
@@ -108,6 +120,22 @@
 				7497CD0D26B5B49D00D54D7F /* MainViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7497CD6326B6A2A700D54D7F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7497CD6426B6A2A700D54D7F /* MenuItemCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7497CD6A26B6A7B400D54D7F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7497CD6B26B6A7C100D54D7F /* MenuItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		74F1797B26B5B0A80004FCA0 = {
@@ -210,11 +238,15 @@
 				7497CD5B26B5D37E00D54D7F /* UITableView+Register.swift in Sources */,
 				7497CD5A26B5D37E00D54D7F /* EasyAutolayout.swift in Sources */,
 				7497CD1026B5B49D00D54D7F /* MainViewModel.swift in Sources */,
+				7497CD6526B6A2A700D54D7F /* MenuItemCell.swift in Sources */,
 				74F1798826B5B0A80004FCA0 /* AppDelegate.swift in Sources */,
+				7497CD6726B6A55800D54D7F /* UIView+subviews.swift in Sources */,
+				7497CD6C26B6A7C100D54D7F /* MenuItem.swift in Sources */,
 				7497CD4E26B5CC6600D54D7F /* AppRouter.swift in Sources */,
 				7497CD5926B5D37E00D54D7F /* UIView+Identifiers.swift in Sources */,
 				7497CD0F26B5B49D00D54D7F /* MainView.swift in Sources */,
 				74F1798A26B5B0A80004FCA0 /* SceneDelegate.swift in Sources */,
+				7497CD6926B6A61E00D54D7F /* MainRouterInput.swift in Sources */,
 				7497CD0E26B5B49D00D54D7F /* MainRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

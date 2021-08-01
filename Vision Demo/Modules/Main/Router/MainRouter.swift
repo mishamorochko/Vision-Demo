@@ -1,8 +1,6 @@
 import UIKit
 
-protocol MainRouter: AnyObject {}
-
-final class MainRouterImplementation: UIViewController, MainRouter {
+final class MainRouter: UIViewController, MainRouterInput {
 
     // MARK: - Properties
     // MARK: Private
@@ -30,7 +28,7 @@ final class MainRouterImplementation: UIViewController, MainRouter {
     override func loadView() {
         let model = MainViewModel()
         view = MainView(viewModel: model)
+        navigationController?.navigationBar.barStyle = .default
+        title = "Vision Demo"
     }
-
-    // MARK: - API
 }
