@@ -1,6 +1,6 @@
 # Vision Demo
 ## Overview
-Vision Demo using CoreML and Vision Frameworks which detect some object and recognize it.
+Vision Demo using CoreML and Vision Frameworks which detect some object and recognize it. Now im working on text recongition feature. Branch **text-recognition-module**
 ## Features in development:
 - Text Recognition
 - Face Detection
