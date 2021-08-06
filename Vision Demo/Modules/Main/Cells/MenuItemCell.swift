@@ -41,8 +41,7 @@ final class MenuItemCell: UITableViewCell, ReusableView {
         disclosureIndicator.image = UIImage(systemName: "arrow.right")
         disclosureIndicator.contentMode = .scaleAspectFit
 
-        let accessibilitySize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .caption1).pointSize
-        titleLabel.font = .systemFont(ofSize: accessibilitySize)
+        titleLabel.font = .systemFont(ofSize: 16, weight: .medium)
 
         containerView.backgroundColor = UIColor(named: "MainColor")
         containerView.layer.cornerRadius = 12

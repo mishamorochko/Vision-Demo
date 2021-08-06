@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 final class TextRecognitionViewModel {
 
@@ -17,5 +17,22 @@ final class TextRecognitionViewModel {
 
     func becomeActive() {}
 
-    // MARK: - Helpers
+    func chooseImage() {
+        let actionSheet = UIAlertController(title: "Choose image from:", message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.router?.openCamera()
+        }))
+
+        actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+            self.router?.openGallery()
+        }))
+
+        actionSheet.addAction(UIAlertAction(title: "Test image", style: .default, handler: { _ in
+            self.router?.openTestImage()
+        }))
+
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        router!.presentImageActionSheet(actionSheet: actionSheet)
+    }
 }

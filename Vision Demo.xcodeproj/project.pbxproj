@@ -25,6 +25,7 @@
 		7497CD7D26B6ACCE00D54D7F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD7C26B6ACCE00D54D7F /* Router.swift */; };
 		7497CD7F26B6AFEC00D54D7F /* MenuItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD7E26B6AFEC00D54D7F /* MenuItemType.swift */; };
 		74A3E52426B70FED00B39EDB /* CoreVisionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A3E52326B70FED00B39EDB /* CoreVisionManager.swift */; };
+		74C53A9826BD884700FF01EE /* TextRecognitionViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C53A9726BD884700FF01EE /* TextRecognitionViewInput.swift */; };
 		74F1798826B5B0A80004FCA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1798726B5B0A80004FCA0 /* AppDelegate.swift */; };
 		74F1798A26B5B0A80004FCA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1798926B5B0A80004FCA0 /* SceneDelegate.swift */; };
 		74F1799126B5B0A90004FCA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F1799026B5B0A90004FCA0 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		7497CD7C26B6ACCE00D54D7F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7497CD7E26B6AFEC00D54D7F /* MenuItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemType.swift; sourceTree = "<group>"; };
 		74A3E52326B70FED00B39EDB /* CoreVisionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreVisionManager.swift; sourceTree = "<group>"; };
+		74C53A9726BD884700FF01EE /* TextRecognitionViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognitionViewInput.swift; sourceTree = "<group>"; };
 		74F1798426B5B0A80004FCA0 /* Vision Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vision Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F1798726B5B0A80004FCA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74F1798926B5B0A80004FCA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				7497CD6F26B6A92B00D54D7F /* TextRecognitionView.swift */,
+				74C53A9726BD884700FF01EE /* TextRecognitionViewInput.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				7497CD7126B6A92B00D54D7F /* TextRecognitionRouter.swift in Sources */,
 				7497CD6726B6A55800D54D7F /* UIView+subviews.swift in Sources */,
 				7497CD6C26B6A7C100D54D7F /* MenuItem.swift in Sources */,
+				74C53A9826BD884700FF01EE /* TextRecognitionViewInput.swift in Sources */,
 				7497CD4E26B5CC6600D54D7F /* AppRouter.swift in Sources */,
 				7497CD5926B5D37E00D54D7F /* UIView+Identifiers.swift in Sources */,
 				7497CD7326B6A92B00D54D7F /* TextRecognitionViewModel.swift in Sources */,

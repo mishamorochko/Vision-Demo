@@ -1,13 +1,14 @@
 import UIKit
 
-final class TextRecognitionView: UIView {
+final class TextRecognitionView: UIView, TextRecognitionViewInput {
 
     // MARK: - Properties
     // MARK: Private
 
     private let viewModel: TextRecognitionViewModel
-
-    private let textLabel = UILabel()
+    private let importOrTakeImageButton = UIButton()
+    private let selectedImageView = UIImageView()
+    private let resultTextView = UITextView()
 
     // MARK: - Initializers
 
@@ -21,36 +22,63 @@ final class TextRecognitionView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        importOrTakeImageButton.layer.cornerRadius = importOrTakeImageButton.frame.size.height / 2
+    }
 
     // MARK: - Setups
-
+    
+    func updateView(newImage: UIImage) {
+        selectedImageView.image = newImage
+        CoreVisionManager.instance.recognizeTextFrom(image: newImage) { result in
+            self.resultTextView.text = result
+        }
+    }
+    
     private func setup() {
         setupUI()
         addSubviews()
         setupConstraints()
-        visionTest()
     }
 
     private func setupUI() {
         backgroundColor = UIColor(named: "SecondColor")
-        textLabel.text = "Text Recognition Module"
+        importOrTakeImageButton.setTitle("Select image", for: .normal)
+        importOrTakeImageButton.backgroundColor = .systemBlue
+        
+        resultTextView.layer.cornerRadius = 12
+        resultTextView.backgroundColor = UIColor(named: "MainColor")
+        resultTextView.isEditable = false
+        resultTextView.font = .systemFont(ofSize: 14, weight: .regular)
+        
+        guard let image = UIImage(named: "handwritten") else { return }
+        selectedImageView.image = image
+        selectedImageView.contentMode = .scaleAspectFit
+        
+        CoreVisionManager.instance.recognizeTextFrom(image: image) { result in
+            self.resultTextView.text = result
+        }
+        
+        importOrTakeImageButton.addTarget(self, action: #selector(selectImageDidTapped), for: .touchUpInside)
     }
 
     private func addSubviews() {
-        addSubviews(views: textLabel)
+        addSubviews(views: importOrTakeImageButton, selectedImageView, resultTextView)
     }
 
     private func setupConstraints() {
-        textLabel.pin.centerY(in: self).edges([.left, .right], to: self, insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
-        textLabel.numberOfLines = 0
+        importOrTakeImageButton.pin.bottom(to: self, offset: 42).size(to: CGSize(width: 210, height: 42)).centerX(in: self)
+        selectedImageView.pin.leading(to: self, offset: 16).trailing(to: self, offset: 16).height(to: 280)
+        
+        selectedImageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        resultTextView.pin.below(of: selectedImageView, offset: 12).above(of: importOrTakeImageButton, offset: 16).leading(to: self, offset: 16).trailing(to: self, offset: 16)
     }
 
-    // MARK: = Helpers
-    private func visionTest() {
-        guard let image = UIImage(named: "handwritten") else { return }
-        CoreVisionManager.instance.recognizeTextFrom(image: image) { [weak self] recognizedText in
-            guard let view = self else { return }
-            view.textLabel.text = recognizedText
-        }
+    // MARK: - Helpers
+    
+    @objc private func selectImageDidTapped() {
+        viewModel.chooseImage()
     }
 }
