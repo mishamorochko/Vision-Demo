@@ -44,7 +44,7 @@ final class MenuItemCell: UITableViewCell, ReusableView {
         titleLabel.font = .systemFont(ofSize: 16, weight: .medium)
 
         containerView.backgroundColor = UIColor(named: "MainColor")
-        containerView.layer.cornerRadius = 12
+        containerView.layer.cornerRadius = 18
         containerView.layer.masksToBounds = true
     }
 
@@ -55,6 +55,6 @@ final class MenuItemCell: UITableViewCell, ReusableView {
     private func setupConstraints() {
         disclosureIndicator.pin.centerY(in: containerView).size(to: 28).trailing(to: containerView, offset: 16)
         titleLabel.pin.edges(.all, to: containerView, insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
-        containerView.pin.edges(.all, to: self, insets: UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)).height(to: 42)
+        containerView.pin.edges(.all, to: self, insets: UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)).height(to: 50)
     }
 }

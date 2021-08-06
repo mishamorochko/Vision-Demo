@@ -30,6 +30,7 @@ final class MainRouter: UIViewController {
         model.router = self
         view = MainView(viewModel: model)
         navigationController?.navigationBar.barStyle = .default
+        navigationController?.navigationBar.prefersLargeTitles = true
         title = "Vision Demo"
     }
 }
