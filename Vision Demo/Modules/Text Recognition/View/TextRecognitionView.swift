@@ -23,6 +23,8 @@ final class TextRecognitionView: UIView, TextRecognitionViewInput {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Lifecycle
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         importOrTakeImageButton.layer.cornerRadius = importOrTakeImageButton.frame.size.height / 2
@@ -53,13 +55,9 @@ final class TextRecognitionView: UIView, TextRecognitionViewInput {
         resultTextView.isEditable = false
         resultTextView.font = .systemFont(ofSize: 14, weight: .regular)
         
-        guard let image = UIImage(named: "handwritten") else { return }
+        guard let image = UIImage(systemName: "photo") else { return }
         selectedImageView.image = image
         selectedImageView.contentMode = .scaleAspectFit
-        
-        CoreVisionManager.instance.recognizeTextFrom(image: image) { result in
-            self.resultTextView.text = result
-        }
         
         importOrTakeImageButton.addTarget(self, action: #selector(selectImageDidTapped), for: .touchUpInside)
     }

@@ -20,15 +20,15 @@ final class TextRecognitionViewModel {
     func chooseImage() {
         let actionSheet = UIAlertController(title: "Choose image from:", message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
-            self.router?.openCamera()
+            self.router?.actionForChoosedType(.camera)
         }))
 
         actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
-            self.router?.openGallery()
+            self.router?.actionForChoosedType(.gallery)
         }))
 
         actionSheet.addAction(UIAlertAction(title: "Test image", style: .default, handler: { _ in
-            self.router?.openTestImage()
+            self.router?.actionForChoosedType(.testImage)
         }))
 
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

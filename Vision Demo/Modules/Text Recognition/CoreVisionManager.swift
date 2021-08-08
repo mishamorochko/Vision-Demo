@@ -18,7 +18,7 @@ final class CoreVisionManager {
                 recognizedStrings.forEach { string in
                     recognizedString += "\(string) "
                 }
-                completion(recognizedString)
+                completion(recognizedString.isEmpty ? "Text not found" : recognizedString)
             }
             request.recognitionLevel = recognitionLevel ?? .accurate
             request.usesLanguageCorrection = true

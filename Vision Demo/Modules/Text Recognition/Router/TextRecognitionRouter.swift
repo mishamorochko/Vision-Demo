@@ -1,13 +1,16 @@
 import UIKit
 
-final class TextRecognitionRouter: UIViewController, TextRecognitionRouterInput {
+final class TextRecognitionRouter: UIViewController {
     
     // MARK: - Properties
+    // MARK: - Public
+    
+    var model: TextRecognitionViewModel?
+    var viewController: TextRecognitionViewInput?
+    
     // MARK: Private
     
     private let completion: (() -> Void)?
-    var model: TextRecognitionViewModel?
-    var viewController: TextRecognitionViewInput?
     
     // MARK: - Initialiers
     
@@ -21,48 +24,18 @@ final class TextRecognitionRouter: UIViewController, TextRecognitionRouterInput 
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.largeTitleDisplayMode = .never // This fixes the issue
+    }
+    
     deinit {
         completion?()
         #if DEBUG
         print("TextRecognitionRouter deinit")
         #endif
-    }
-    
-    func presentImageActionSheet(actionSheet: UIAlertController) {
-        present(actionSheet)
-    }
-    
-    func openCamera() {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerController.SourceType.camera
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-        } else {
-            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    func openGallery() {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.allowsEditing = false
-            imagePicker.sourceType = UIImagePickerController.SourceType.savedPhotosAlbum
-            self.present(imagePicker, animated: true, completion: nil)
-        } else {
-            let alert  = UIAlertController(title: "Warning", message: "You don't have permission to access gallery.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    func openTestImage() {
-        guard let testImage = UIImage(named: "customTextTest") else { return }
-        viewController?.updateView(newImage: testImage)
     }
     
     // MARK: - UIViewController
@@ -72,6 +45,55 @@ final class TextRecognitionRouter: UIViewController, TextRecognitionRouterInput 
         model!.router = self
         viewController = TextRecognitionView(viewModel: model!)
         view = viewController
+    }
+    
+    // MARK: - Helpers
+    
+    private func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        } else {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    private func openGallery() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = .savedPhotosAlbum
+            self.present(imagePicker, animated: true, completion: nil)
+        } else {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have permission to access gallery.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    private func openTestImage() {
+        guard let testImage = UIImage(named: "customTextTest") else { return }
+        viewController?.updateView(newImage: testImage)
+    }
+}
+
+extension TextRecognitionRouter: TextRecognitionRouterInput {
+    func actionForChoosedType(_ type: TextRecognitionRouteType) {
+        switch type {
+        case .camera: openCamera()
+        case .gallery: openGallery()
+        case .testImage: openTestImage()
+        }
+    }
+    
+    func presentImageActionSheet(actionSheet: UIAlertController) {
+        present(actionSheet)
     }
 }
 
