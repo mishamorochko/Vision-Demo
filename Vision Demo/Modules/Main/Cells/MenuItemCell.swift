@@ -43,7 +43,7 @@ final class MenuItemCell: UITableViewCell, ReusableView {
 
         titleLabel.font = .systemFont(ofSize: 16, weight: .medium)
 
-        containerView.backgroundColor = UIColor(named: "MainColor")
+        containerView.backgroundColor = AppColor.mainColor.uiColor
         containerView.layer.cornerRadius = 18
         containerView.layer.masksToBounds = true
     }

@@ -46,12 +46,12 @@ final class TextRecognitionView: UIView, TextRecognitionViewInput {
     }
 
     private func setupUI() {
-        backgroundColor = UIColor(named: "SecondColor")
+        backgroundColor = AppColor.secondaryColor.uiColor
         importOrTakeImageButton.setTitle("Select image", for: .normal)
         importOrTakeImageButton.backgroundColor = .systemBlue
         
         resultTextView.layer.cornerRadius = 12
-        resultTextView.backgroundColor = UIColor(named: "MainColor")
+        resultTextView.backgroundColor = AppColor.mainColor.uiColor
         resultTextView.isEditable = false
         resultTextView.font = .systemFont(ofSize: 14, weight: .regular)
         

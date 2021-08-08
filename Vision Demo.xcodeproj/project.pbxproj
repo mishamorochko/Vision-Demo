@@ -25,6 +25,7 @@
 		7497CD7D26B6ACCE00D54D7F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD7C26B6ACCE00D54D7F /* Router.swift */; };
 		7497CD7F26B6AFEC00D54D7F /* MenuItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD7E26B6AFEC00D54D7F /* MenuItemType.swift */; };
 		74A2F7F826BFD54500C3501B /* TextRecognitionRouteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A2F7F726BFD54500C3501B /* TextRecognitionRouteType.swift */; };
+		74A2F7FB26C00C9100C3501B /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A2F7FA26C00C9100C3501B /* AppColor.swift */; };
 		74A3E52426B70FED00B39EDB /* CoreVisionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A3E52326B70FED00B39EDB /* CoreVisionManager.swift */; };
 		74C53A9826BD884700FF01EE /* TextRecognitionViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C53A9726BD884700FF01EE /* TextRecognitionViewInput.swift */; };
 		74F1798826B5B0A80004FCA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1798726B5B0A80004FCA0 /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 		7497CD7C26B6ACCE00D54D7F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7497CD7E26B6AFEC00D54D7F /* MenuItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemType.swift; sourceTree = "<group>"; };
 		74A2F7F726BFD54500C3501B /* TextRecognitionRouteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognitionRouteType.swift; sourceTree = "<group>"; };
+		74A2F7FA26C00C9100C3501B /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		74A3E52326B70FED00B39EDB /* CoreVisionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreVisionManager.swift; sourceTree = "<group>"; };
 		74C53A9726BD884700FF01EE /* TextRecognitionViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognitionViewInput.swift; sourceTree = "<group>"; };
 		74F1798426B5B0A80004FCA0 /* Vision Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vision Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,10 +89,10 @@
 		7497CD5026B5CD4F00D54D7F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				74A2F7FC26C00E8700C3501B /* Extensions */,
+				74A3E52326B70FED00B39EDB /* CoreVisionManager.swift */,
 				7497CD5726B5D37E00D54D7F /* EasyAutolayout.swift */,
-				7497CD5826B5D37E00D54D7F /* UITableView+Register.swift */,
-				7497CD5626B5D37E00D54D7F /* UIView+Identifiers.swift */,
-				7497CD6626B6A55800D54D7F /* UIView+subviews.swift */,
+				74A2F7FA26C00C9100C3501B /* AppColor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -163,8 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				74A2F7F626BFD53B00C3501B /* Models */,
-				74A3E52326B70FED00B39EDB /* CoreVisionManager.swift */,
-				7497CD7A26B6A9C900D54D7F /* Cells */,
 				7497CD7926B6A9B600D54D7F /* Router */,
 				7497CD7826B6A9AB00D54D7F /* ViewModel */,
 				7497CD7726B6A9A800D54D7F /* View */,
@@ -198,13 +198,6 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		7497CD7A26B6A9C900D54D7F /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		7497CD7B26B6ACC500D54D7F /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +212,16 @@
 				74A2F7F726BFD54500C3501B /* TextRecognitionRouteType.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		74A2F7FC26C00E8700C3501B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7497CD5826B5D37E00D54D7F /* UITableView+Register.swift */,
+				7497CD5626B5D37E00D54D7F /* UIView+Identifiers.swift */,
+				7497CD6626B6A55800D54D7F /* UIView+subviews.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		74F1797B26B5B0A80004FCA0 = {
@@ -324,6 +327,7 @@
 				7497CD1026B5B49D00D54D7F /* MainViewModel.swift in Sources */,
 				7497CD7526B6A96600D54D7F /* TextRecognitionRouterInput.swift in Sources */,
 				7497CD7D26B6ACCE00D54D7F /* Router.swift in Sources */,
+				74A2F7FB26C00C9100C3501B /* AppColor.swift in Sources */,
 				7497CD6526B6A2A700D54D7F /* MenuItemCell.swift in Sources */,
 				7497CD7226B6A92B00D54D7F /* TextRecognitionView.swift in Sources */,
 				7497CD7F26B6AFEC00D54D7F /* MenuItemType.swift in Sources */,

@@ -28,7 +28,7 @@ final class TextRecognitionRouter: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.largeTitleDisplayMode = .never // This fixes the issue
+        self.navigationItem.largeTitleDisplayMode = .never
     }
     
     deinit {
