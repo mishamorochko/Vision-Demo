@@ -1,6 +1,6 @@
 import UIKit
 
-final class TextRecognitionView: UIView, TextRecognitionViewInput {
+final class TextRecognitionView: UIView, TextRecognitionViewProtocol {
 
     // MARK: - Properties
     // MARK: Private
@@ -9,6 +9,7 @@ final class TextRecognitionView: UIView, TextRecognitionViewInput {
     private let importOrTakeImageButton = UIButton()
     private let selectedImageView = UIImageView()
     private let resultTextView = UITextView()
+    private let coreVisionManager = CoreVisionManager()
 
     // MARK: - Initializers
 
@@ -31,13 +32,6 @@ final class TextRecognitionView: UIView, TextRecognitionViewInput {
     }
 
     // MARK: - Setups
-    
-    func updateView(newImage: UIImage) {
-        selectedImageView.image = newImage
-        CoreVisionManager.instance.recognizeTextFrom(image: newImage) { result in
-            self.resultTextView.text = result
-        }
-    }
     
     private func setup() {
         setupUI()
@@ -76,7 +70,31 @@ final class TextRecognitionView: UIView, TextRecognitionViewInput {
 
     // MARK: - Helpers
     
+    private func updateImage(newImage: UIImage) {
+        selectedImageView.image = newImage
+        coreVisionManager.recognizeTextFrom(image: newImage) { result in
+            self.resultTextView.text = result
+        }
+    }
+    
     @objc private func selectImageDidTapped() {
-        viewModel.chooseImage()
+        let actionSheet = UIAlertController(title: "Choose image from:", message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.viewModel.openImagePickerAction(for: .camera) { selectedImage in
+                self.updateImage(newImage: selectedImage)
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+            self.viewModel.openImagePickerAction(for: .gallery) { selectedImage in
+                self.updateImage(newImage: selectedImage)
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Test image", style: .default, handler: { _ in
+            self.viewModel.openImagePickerAction(for: .testImage) { selectedImage in
+                self.updateImage(newImage: selectedImage)
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        viewModel.present(actionSheet: actionSheet)
     }
 }

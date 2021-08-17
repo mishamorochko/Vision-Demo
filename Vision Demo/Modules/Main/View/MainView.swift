@@ -13,7 +13,6 @@ final class MainView: UIView {
     init(viewModel: MainViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
-        viewModel.initMenuModels()
         setup()
     }
     

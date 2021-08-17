@@ -7,7 +7,7 @@ final class MainViewModel {
     // MARK: - Properties
     // MARK: Public
 
-    weak var router: MainRouterInput?
+    weak var router: MainRouterProtocol?
 
     var itemsCount: Int {
         menuItems.count
@@ -23,17 +23,15 @@ final class MainViewModel {
 
     // MARK: - Initializers
 
-    init() {}
-
-    // MARK: - API
-
-    func becomeActive() {}
-
-    func initMenuModels() {
+    init() {
         menuItems.append(MenuItem(title: "Text Recognition", image: UIImage(systemName: "rectangle.and.text.magnifyingglass") ?? UIImage(), type: .textRecognition))
         menuItems.append(MenuItem(title: "Face Detection", image: UIImage(systemName: "faceid") ?? UIImage(), type: .faceDetection))
         menuItems.append(MenuItem(title: "Object tracking", image: UIImage(systemName: "person.fill.viewfinder") ?? UIImage(), type: .objectTracking))
     }
+
+    // MARK: - API
+
+    func becomeActive() {}
 
     func didSelectItem(at indexPath: IndexPath) {
         guard let router = router else { return }

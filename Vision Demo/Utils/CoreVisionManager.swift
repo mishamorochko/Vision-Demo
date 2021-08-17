@@ -3,9 +3,7 @@ import UIKit
 
 final class CoreVisionManager {
     
-    static let instance = CoreVisionManager()
-
-    func recognizeTextFrom(image: UIImage, recognitionLevel: VNRequestTextRecognitionLevel? = nil, completion: @escaping (String) -> Void) {
+    func recognizeTextFrom(image: UIImage, recognitionLevel: VNRequestTextRecognitionLevel = .accurate, completion: @escaping (String) -> Void) {
         DispatchQueue.main.async {
             guard let cgImage = image.cgImage else { return }
             let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
@@ -20,7 +18,7 @@ final class CoreVisionManager {
                 }
                 completion(recognizedString.isEmpty ? "Text not found" : recognizedString)
             }
-            request.recognitionLevel = recognitionLevel ?? .accurate
+            request.recognitionLevel = recognitionLevel
             request.usesLanguageCorrection = true
             do {
                 try requestHandler.perform([request])

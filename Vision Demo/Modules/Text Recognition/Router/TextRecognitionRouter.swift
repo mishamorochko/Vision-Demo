@@ -6,16 +6,14 @@ final class TextRecognitionRouter: UIViewController {
     // MARK: - Public
     
     var model: TextRecognitionViewModel?
-    var viewController: TextRecognitionViewInput?
     
     // MARK: Private
     
-    private let completion: (() -> Void)?
+    private let imagePicker = ImagePickerRouter()
     
     // MARK: - Initialiers
     
-    init(completion: (() -> Void)? = nil) {
-        self.completion = completion
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -32,7 +30,6 @@ final class TextRecognitionRouter: UIViewController {
     }
     
     deinit {
-        completion?()
         #if DEBUG
         print("TextRecognitionRouter deinit")
         #endif
@@ -43,52 +40,24 @@ final class TextRecognitionRouter: UIViewController {
     override func loadView() {
         model = TextRecognitionViewModel()
         model!.router = self
-        viewController = TextRecognitionView(viewModel: model!)
-        view = viewController
+        let recognitionView = TextRecognitionView(viewModel: model!)
+        view = recognitionView
     }
     
     // MARK: - Helpers
     
-    private func openCamera() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-        } else {
-            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    private func openGallery() {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.allowsEditing = false
-            imagePicker.sourceType = .savedPhotosAlbum
-            self.present(imagePicker, animated: true, completion: nil)
-        } else {
-            let alert  = UIAlertController(title: "Warning", message: "You don't have permission to access gallery.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    private func openTestImage() {
+    private func openTestImage(selectedImageCompletion: @escaping ((UIImage) -> Void)) {
         guard let testImage = UIImage(named: "customTextTest") else { return }
-        viewController?.updateView(newImage: testImage)
+        selectedImageCompletion(testImage)
     }
 }
 
-extension TextRecognitionRouter: TextRecognitionRouterInput {
-    func actionForChoosedType(_ type: TextRecognitionRouteType) {
+extension TextRecognitionRouter: TextRecognitionRouterProtocol {
+    func actionForChoosedType(_ type: TextRecognitionRouteType, selectedImageCompletion: @escaping ((UIImage) -> Void)) {
         switch type {
-        case .camera: openCamera()
-        case .gallery: openGallery()
-        case .testImage: openTestImage()
+        case .camera: imagePicker.showCamera(on: self, selectedImageCompletion: selectedImageCompletion)
+        case .gallery: imagePicker.showGallery(on: self, selectedImageCompletion: selectedImageCompletion)
+        case .testImage: openTestImage(selectedImageCompletion: selectedImageCompletion)
         }
     }
     
@@ -97,11 +66,4 @@ extension TextRecognitionRouter: TextRecognitionRouterInput {
     }
 }
 
-extension TextRecognitionRouter: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[.originalImage] as? UIImage {
-            viewController?.updateView(newImage: pickedImage)
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
-}
+
