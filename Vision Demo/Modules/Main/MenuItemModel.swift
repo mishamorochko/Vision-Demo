@@ -1,6 +1,6 @@
 import UIKit
 
-struct MenuItem {
+struct MenuItemModel {
     let title: String
     let image: UIImage
     let type: MenuItemType

@@ -16,18 +16,15 @@
 		7497CD5B26B5D37E00D54D7F /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD5826B5D37E00D54D7F /* UITableView+Register.swift */; };
 		7497CD6526B6A2A700D54D7F /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD6426B6A2A700D54D7F /* MenuItemCell.swift */; };
 		7497CD6726B6A55800D54D7F /* UIView+subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD6626B6A55800D54D7F /* UIView+subviews.swift */; };
-		7497CD6926B6A61E00D54D7F /* MainRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD6826B6A61E00D54D7F /* MainRouterProtocol.swift */; };
-		7497CD6C26B6A7C100D54D7F /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD6B26B6A7C100D54D7F /* MenuItem.swift */; };
+		7497CD6C26B6A7C100D54D7F /* MenuItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD6B26B6A7C100D54D7F /* MenuItemModel.swift */; };
 		7497CD7126B6A92B00D54D7F /* TextRecognitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD6E26B6A92B00D54D7F /* TextRecognitionRouter.swift */; };
 		7497CD7226B6A92B00D54D7F /* TextRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD6F26B6A92B00D54D7F /* TextRecognitionView.swift */; };
 		7497CD7326B6A92B00D54D7F /* TextRecognitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD7026B6A92B00D54D7F /* TextRecognitionViewModel.swift */; };
-		7497CD7526B6A96600D54D7F /* TextRecognitionRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD7426B6A96600D54D7F /* TextRecognitionRouterProtocol.swift */; };
 		7497CD7D26B6ACCE00D54D7F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD7C26B6ACCE00D54D7F /* Router.swift */; };
 		7497CD7F26B6AFEC00D54D7F /* MenuItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7497CD7E26B6AFEC00D54D7F /* MenuItemType.swift */; };
 		74A2F7F826BFD54500C3501B /* TextRecognitionRouteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A2F7F726BFD54500C3501B /* TextRecognitionRouteType.swift */; };
 		74A2F7FB26C00C9100C3501B /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A2F7FA26C00C9100C3501B /* AppColor.swift */; };
 		74A3E52426B70FED00B39EDB /* CoreVisionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A3E52326B70FED00B39EDB /* CoreVisionManager.swift */; };
-		74C53A9826BD884700FF01EE /* TextRecognitionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C53A9726BD884700FF01EE /* TextRecognitionViewProtocol.swift */; };
 		74F1798826B5B0A80004FCA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1798726B5B0A80004FCA0 /* AppDelegate.swift */; };
 		74F1798A26B5B0A80004FCA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1798926B5B0A80004FCA0 /* SceneDelegate.swift */; };
 		74F1799126B5B0A90004FCA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F1799026B5B0A90004FCA0 /* Assets.xcassets */; };
@@ -45,18 +42,15 @@
 		7497CD5826B5D37E00D54D7F /* UITableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
 		7497CD6426B6A2A700D54D7F /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		7497CD6626B6A55800D54D7F /* UIView+subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+subviews.swift"; sourceTree = "<group>"; };
-		7497CD6826B6A61E00D54D7F /* MainRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterProtocol.swift; sourceTree = "<group>"; };
-		7497CD6B26B6A7C100D54D7F /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		7497CD6B26B6A7C100D54D7F /* MenuItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemModel.swift; sourceTree = "<group>"; };
 		7497CD6E26B6A92B00D54D7F /* TextRecognitionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognitionRouter.swift; sourceTree = "<group>"; };
 		7497CD6F26B6A92B00D54D7F /* TextRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognitionView.swift; sourceTree = "<group>"; };
 		7497CD7026B6A92B00D54D7F /* TextRecognitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognitionViewModel.swift; sourceTree = "<group>"; };
-		7497CD7426B6A96600D54D7F /* TextRecognitionRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognitionRouterProtocol.swift; sourceTree = "<group>"; };
 		7497CD7C26B6ACCE00D54D7F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		7497CD7E26B6AFEC00D54D7F /* MenuItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemType.swift; sourceTree = "<group>"; };
 		74A2F7F726BFD54500C3501B /* TextRecognitionRouteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognitionRouteType.swift; sourceTree = "<group>"; };
 		74A2F7FA26C00C9100C3501B /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		74A3E52326B70FED00B39EDB /* CoreVisionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreVisionManager.swift; sourceTree = "<group>"; };
-		74C53A9726BD884700FF01EE /* TextRecognitionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognitionViewProtocol.swift; sourceTree = "<group>"; };
 		74F1798426B5B0A80004FCA0 /* Vision Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vision Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F1798726B5B0A80004FCA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74F1798926B5B0A80004FCA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,8 +74,8 @@
 		7497CD4F26B5CD4200D54D7F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				74FF2F3B26CBDD5200B59391 /* ImagePicker */,
 				7497CD7B26B6ACC500D54D7F /* Core */,
+				74FF2F3B26CBDD5200B59391 /* ImagePicker */,
 				7497CD6D26B6A91100D54D7F /* Text Recognition */,
 				7497CD5226B5CD5C00D54D7F /* Main */,
 				7497CD5126B5CD5800D54D7F /* App */,
@@ -113,92 +107,25 @@
 		7497CD5226B5CD5C00D54D7F /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				7497CD6A26B6A7B400D54D7F /* Models */,
-				7497CD6326B6A2A700D54D7F /* Cells */,
-				7497CD5326B5CD7300D54D7F /* Router */,
-				7497CD5426B5CD7A00D54D7F /* View */,
-				7497CD5526B5CD7E00D54D7F /* ViewModel */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		7497CD5326B5CD7300D54D7F /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				7497CD6826B6A61E00D54D7F /* MainRouterProtocol.swift */,
+				7497CD7E26B6AFEC00D54D7F /* MenuItemType.swift */,
+				7497CD6426B6A2A700D54D7F /* MenuItemCell.swift */,
+				7497CD6B26B6A7C100D54D7F /* MenuItemModel.swift */,
 				7497CD0B26B5B49D00D54D7F /* MainRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		7497CD5426B5CD7A00D54D7F /* View */ = {
-			isa = PBXGroup;
-			children = (
 				7497CD0C26B5B49D00D54D7F /* MainView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7497CD5526B5CD7E00D54D7F /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
 				7497CD0D26B5B49D00D54D7F /* MainViewModel.swift */,
 			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		7497CD6326B6A2A700D54D7F /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				7497CD6426B6A2A700D54D7F /* MenuItemCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		7497CD6A26B6A7B400D54D7F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				7497CD6B26B6A7C100D54D7F /* MenuItem.swift */,
-				7497CD7E26B6AFEC00D54D7F /* MenuItemType.swift */,
-			);
-			path = Models;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		7497CD6D26B6A91100D54D7F /* Text Recognition */ = {
 			isa = PBXGroup;
 			children = (
-				74A2F7F626BFD53B00C3501B /* Models */,
-				7497CD7926B6A9B600D54D7F /* Router */,
-				7497CD7826B6A9AB00D54D7F /* ViewModel */,
-				7497CD7726B6A9A800D54D7F /* View */,
-			);
-			path = "Text Recognition";
-			sourceTree = "<group>";
-		};
-		7497CD7726B6A9A800D54D7F /* View */ = {
-			isa = PBXGroup;
-			children = (
+				74A2F7F726BFD54500C3501B /* TextRecognitionRouteType.swift */,
+				7497CD6E26B6A92B00D54D7F /* TextRecognitionRouter.swift */,
 				7497CD6F26B6A92B00D54D7F /* TextRecognitionView.swift */,
-				74C53A9726BD884700FF01EE /* TextRecognitionViewProtocol.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7497CD7826B6A9AB00D54D7F /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
 				7497CD7026B6A92B00D54D7F /* TextRecognitionViewModel.swift */,
 			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		7497CD7926B6A9B600D54D7F /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				7497CD7426B6A96600D54D7F /* TextRecognitionRouterProtocol.swift */,
-				7497CD6E26B6A92B00D54D7F /* TextRecognitionRouter.swift */,
-			);
-			path = Router;
+			path = "Text Recognition";
 			sourceTree = "<group>";
 		};
 		7497CD7B26B6ACC500D54D7F /* Core */ = {
@@ -207,14 +134,6 @@
 				7497CD7C26B6ACCE00D54D7F /* Router.swift */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		74A2F7F626BFD53B00C3501B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				74A2F7F726BFD54500C3501B /* TextRecognitionRouteType.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		74A2F7FC26C00E8700C3501B /* Extensions */ = {
@@ -336,7 +255,6 @@
 				7497CD5A26B5D37E00D54D7F /* EasyAutolayout.swift in Sources */,
 				74A2F7F826BFD54500C3501B /* TextRecognitionRouteType.swift in Sources */,
 				7497CD1026B5B49D00D54D7F /* MainViewModel.swift in Sources */,
-				7497CD7526B6A96600D54D7F /* TextRecognitionRouterProtocol.swift in Sources */,
 				7497CD7D26B6ACCE00D54D7F /* Router.swift in Sources */,
 				74A2F7FB26C00C9100C3501B /* AppColor.swift in Sources */,
 				7497CD6526B6A2A700D54D7F /* MenuItemCell.swift in Sources */,
@@ -345,15 +263,13 @@
 				74F1798826B5B0A80004FCA0 /* AppDelegate.swift in Sources */,
 				7497CD7126B6A92B00D54D7F /* TextRecognitionRouter.swift in Sources */,
 				7497CD6726B6A55800D54D7F /* UIView+subviews.swift in Sources */,
-				7497CD6C26B6A7C100D54D7F /* MenuItem.swift in Sources */,
-				74C53A9826BD884700FF01EE /* TextRecognitionViewProtocol.swift in Sources */,
+				7497CD6C26B6A7C100D54D7F /* MenuItemModel.swift in Sources */,
 				7497CD4E26B5CC6600D54D7F /* AppRouter.swift in Sources */,
 				7497CD5926B5D37E00D54D7F /* UIView+Identifiers.swift in Sources */,
 				7497CD7326B6A92B00D54D7F /* TextRecognitionViewModel.swift in Sources */,
 				7497CD0F26B5B49D00D54D7F /* MainView.swift in Sources */,
 				74F1798A26B5B0A80004FCA0 /* SceneDelegate.swift in Sources */,
 				74FF2F3D26CBDD6900B59391 /* ImagePickerRouter.swift in Sources */,
-				7497CD6926B6A61E00D54D7F /* MainRouterProtocol.swift in Sources */,
 				74A3E52426B70FED00B39EDB /* CoreVisionManager.swift in Sources */,
 				7497CD0E26B5B49D00D54D7F /* MainRouter.swift in Sources */,
 			);

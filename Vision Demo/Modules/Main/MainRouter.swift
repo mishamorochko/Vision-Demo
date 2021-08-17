@@ -1,5 +1,9 @@
 import UIKit
 
+protocol MainRouterProtocol: Router {
+    func goToTextRecognition()
+}
+
 final class MainRouter: UIViewController {
 
     // MARK: - Initialiers

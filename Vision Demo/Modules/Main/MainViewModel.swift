@@ -13,20 +13,20 @@ final class MainViewModel {
         menuItems.count
     }
 
-    var mainMenuItems: [MenuItem] {
+    var mainMenuItems: [MenuItemModel] {
         menuItems
     }
 
     // MARK: Private
 
-    private var menuItems = [MenuItem]()
+    private var menuItems = [MenuItemModel]()
 
     // MARK: - Initializers
 
     init() {
-        menuItems.append(MenuItem(title: "Text Recognition", image: UIImage(systemName: "rectangle.and.text.magnifyingglass") ?? UIImage(), type: .textRecognition))
-        menuItems.append(MenuItem(title: "Face Detection", image: UIImage(systemName: "faceid") ?? UIImage(), type: .faceDetection))
-        menuItems.append(MenuItem(title: "Object tracking", image: UIImage(systemName: "person.fill.viewfinder") ?? UIImage(), type: .objectTracking))
+        menuItems.append(MenuItemModel(title: "Text Recognition", image: UIImage(systemName: "rectangle.and.text.magnifyingglass") ?? UIImage(), type: .textRecognition))
+        menuItems.append(MenuItemModel(title: "Face Detection", image: UIImage(systemName: "faceid") ?? UIImage(), type: .faceDetection))
+        menuItems.append(MenuItemModel(title: "Object tracking", image: UIImage(systemName: "person.fill.viewfinder") ?? UIImage(), type: .objectTracking))
     }
 
     // MARK: - API

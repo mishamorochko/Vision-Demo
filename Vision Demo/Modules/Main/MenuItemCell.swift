@@ -27,7 +27,7 @@ final class MenuItemCell: UITableViewCell, ReusableView {
 
     // MARK: - API
     
-    func configure(using item: MenuItem) {
+    func configure(using item: MenuItemModel) {
         titleLabel.text = item.title
         disclosureIndicator.image = item.image
     }
