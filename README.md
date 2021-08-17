@@ -9,3 +9,5 @@ Vision Demo using CoreML and Vision Frameworks which detect some object and reco
 - Swift Version - **5.0**
 - Architecture Pattern - **MVVM**
 - Minimum Deployment Target - **iOS 13**
+## Notes
+Now i'm working on text recongition feature. Branch **text-recognition-module**
